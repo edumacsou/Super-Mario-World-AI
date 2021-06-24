@@ -1,26 +1,27 @@
-# Projeto 2: Super Mario World - Inteligência Artificial - 2021.Q1
+# Super Mario World - Artificial Intelligence
 
-Prof. Fabrício Olivetti de França (folivetti@ufabc.edu.br)
+Project created as an avaliation for the AI subject.
+  Prof. Fabrício Olivetti de França (folivetti@ufabc.edu.br)
 
-## Como rodar
+## How to run
 
-Para treinar a IA basta rodar: "python mario-neat.py train"
+To train the AI just run the command: ```python mario-neat.py train```, on your terminal (oppened in this folder).
 
-Para carregar um arquivo de vencedor e ver sua execução digite: "python mario-neat.py run"
+To load a winner's file and see it running, just execute: ```python mario-neat.py run```.
 
-Para usar a opção run, certifique-se de ter o arquivo winner dentro da mesma pasta do código
+For the use of the ```run``` argument, check if exists a winner file on the folder.
 
-## Bibliotecas externas
+## External Libraries
 
-Para rodar é necessário possuir as seguintes bibliotecas instaladas:
+Before running the code, install the following libraries:
 
-Numpy       '''pip install numpy'''
+Numpy       ```pip install numpy```
 
-Retro-Gym   '''pip install gym-retro'''
+Retro-Gym   ```pip install gym-retro```
 
-NEAT        '''pip install neat-python'''
+NEAT        ```pip install neat-python```
 
 
-## Vídeo de Apresentação
+## Presentation Video (in Portuguese)
 
 https://youtu.be/Lz9QnFGjhPQ
