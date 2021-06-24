@@ -1,0 +1,97 @@
+# Configurações NEAT para o agente inteligente para Super Mario World
+
+# A seção 'NEAT' possui todos os dados para a construção do modelo genético
+
+[NEAT]
+# Seleciona os indivíduos com o maior Fitness (progresso na fase)
+fitness_criterion     = max         
+# Distância X até o fim da fase 
+fitness_threshold     = 48000       
+# Quantos indivíduos na população inicial
+pop_size              = 30          
+# O aprendizado é reiniciado a partir de um estado aleatório,
+reset_on_extinction   = True        
+# caso todos os indivíduos sejam extintos.
+                                    
+[DefaultGenome]
+# node activation options
+activation_default      = tanh
+activation_mutate_rate  = 0.01
+activation_options      = tanh
+
+# node aggregation options
+aggregation_default     = sum
+aggregation_mutate_rate = 0.01
+aggregation_options     = sum
+
+# node bias options
+bias_init_mean          = 0.0
+bias_init_stdev         = 1.0
+bias_max_value          = 30.0
+bias_min_value          = -30.0
+bias_mutate_power       = 0.5
+bias_mutate_rate        = 0.7
+bias_replace_rate       = 0.1
+
+# genome compatibility options
+compatibility_disjoint_coefficient = 1.0
+compatibility_weight_coefficient   = 0.5
+
+# connection add/remove rates
+conn_add_prob           = 0.5
+conn_delete_prob        = 0.5
+
+# connection enable options
+enabled_default         = True
+enabled_mutate_rate     = 0.01
+
+# Define que um Node ,não pode ser retro-alimentado
+feed_forward            = True          
+# Todos os nós iniciais são conectados a todos os nós da próxima camada.
+initial_connection      = full          
+
+# node add/remove rates
+node_add_prob           = 0.2
+node_delete_prob        = 0.2
+
+# network parameters
+# Número de nós intermediários - Aumenta o custo computacional (Testei com outros valores, mas o melhor resultado foi sem Hidden Layer)
+num_hidden              = 0
+# Número de inputs, um para cada Tile ao redor do mário (13x13)
+num_inputs              = 169           
+# Quantos movimentos são possíveis
+num_outputs             = 5             
+
+# node response options
+response_init_mean      = 1.0
+response_init_stdev     = 0.0
+response_max_value      = 30.0
+response_min_value      = -30.0
+response_mutate_power   = 0.0
+response_mutate_rate    = 0.0
+response_replace_rate   = 0.0
+
+# connection weight options
+weight_init_mean        = 0.0
+weight_init_stdev       = 1.0
+weight_max_value        = 30
+weight_min_value        = -30
+weight_mutate_power     = 0.5
+weight_mutate_rate      = 0.8
+weight_replace_rate     = 0.1
+
+[DefaultSpeciesSet]
+# Define uma distância genética maxima, a partir desse valor os indivíduos são considerados de espécies distintas.
+compatibility_threshold = 3.0           
+
+[DefaultStagnation]
+# Se o progresso 'máximo' de uma espécie não aumentar, ela será considerada estagnada.
+species_fitness_func = max              
+# Depois dessa quantidade de gerações estagnadas a espécie é extinta.
+max_stagnation       = 15               
+# Quantidade mínima de indivíduos de cada espécie que serão poupados.
+species_elitism      = 2                
+
+[DefaultReproduction]
+elitism            = 2
+survival_threshold = 0.2
